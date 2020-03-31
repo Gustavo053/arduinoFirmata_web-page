@@ -1,0 +1,60 @@
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	font-family: Roboto;
+}
+
+.font-item {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.font-p {
+	padding-top: 10px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+}
+
+.font-p2 {
+	color: darkgray;
+	padding-top: 10px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+}
+
+.font-title {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 30px;
+	color: #141414;
+}
+
+.font-footer {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10px;
+	line-height: 12px;
+}
+
+.container {
+	width: 75%;
+	margin-left: 133px;
+}
+
+.container-footer {
+	width: 81%;
+	margin-left: 133px;
+}
+
+.align-self-end {
+	align-self: flex-end;
+}
+
+.justify-text {
+	text-align: justify;
+}

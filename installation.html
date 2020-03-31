@@ -1,0 +1,189 @@
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/geral.css" />
+		<link rel="stylesheet" href="./css/header.css" />
+		<link rel="stylesheet" href="./css/installation.css" />
+		<link rel="stylesheet" href="./css/responsive.css" />
+		<title>Instalação</title>
+	</head>
+	<body>
+		<header>
+			<nav class="menu">
+				<div class="logo">
+					<img src="./images/ruby.png" width="20%" alt="logo" />
+				</div>
+				<button class="botao-menu" id="botao-menu">
+					<img src="./images/botao.png" alt="botao" />
+				</button>
+				<button class="botao-menu" id="botao-fechar">
+					<img src="./images/fechar.png" alt="botao fechar" />
+				</button>
+				<ul class="font-item" id="menu-mobile">
+					<li>
+						<a href="./index.html">Página Inicial</a>
+					</li>
+					<li>
+						<a href="./installation.html">Instalação</a>
+					</li>
+					<li>
+						<a href="./connectionArduino.html">Conexão com Arduino</a>
+					</li>
+					<li>
+						<a href="./connectionESP32.html">Conexão com ESP32</a>
+					</li>
+					<li>
+						<a href="./examples.html">Exemplos</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main class="geral">
+			<div class="inicio"></div>
+			<section class="align-self-end">
+				<div class="topic-1"></div>
+				<div class="container">
+					<h6 class="font-title margin-bottom-15">Atenção!</h6>
+					<p class="font-p2 margin-bottom-15">
+						É importante você ter algumas coisas já instaladas para
+						continuarmos:
+					</p>
+					<div class="requeriments">
+						<p class="font-p2">
+							Instale o gort:
+							<a href="https://gort.io/documentation/getting_started/downloads/"
+								>https://gort.io/documentation/getting_started/downloads/</a
+							>
+						</p>
+						<p class="font-p2">
+							Instale o gem: <strong>sudo apt install gem</strong>
+						</p>
+						<p class="font-p2">
+							Atualize os pacotes: <strong>sudo apt update</strong>
+						</p>
+						<p class="font-p2">
+							Atualize os diretórios: <strong>sudo apt upgrade</strong>
+						</p>
+					</div>
+				</div>
+				<div class="topic-geral"></div>
+				<div class="container">
+					<h6 class="font-title margin-bottom-15">Instação do ruby</h6>
+					<p class="font-p2 margin-bottom-15">
+						Siga esses simples passo a passo e você terá o ruby na sua máquina:
+					</p>
+					<div class="requeriments margin-bottom-15">
+						<p class="font-p2">
+							Instale o ruby na sua máquina:
+							<strong>sudo apt install ruby-full</strong>
+						</p>
+						<p class="font-p2">
+							Caso queira o pacote mais simples do ruby, execute:
+							<strong>sudo apt install ruby essential</strong>
+						</p>
+						<p class="font-p2">
+							Caso o pacote acima não venha instalado o gem, execute:
+							<strong>sudo apt install gem</strong>
+						</p>
+						<p class="font-p2">
+							Logo após instalar o gem, execute:
+							<strong>sudo gem install rubygems</strong>
+						</p>
+					</div>
+					<p class="font-p2">Pronto, o ruby já está na sua máquina!</p>
+				</div>
+				<div class="topic-geral"></div>
+				<div class="container">
+					<h6 class="font-title margin-bottom-15">Instalação da IDE Arduino</h6>
+					<p class="font-p2 margin-bottom-15">
+						Siga esses simples passos e você terá a IDE Arduino na sua máquina:
+					</p>
+					<div class="requeriments margin-bottom-15">
+						<p class="font-p2">
+							A IDE Arduino é fácil de ser instalada e pode ser obtida através
+							do link:
+							<a href="https://www.arduino.cc">https://www.arduino.cc</a>
+						</p>
+						<p class="font-p2">
+							Entretanto, você pode usar o seguinte comando no terminal para
+							instalar também: sudo apt install arduino
+						</p>
+					</div>
+					<p class="font-p2">Pronto, a IDE Arduino já está na sua máquina!</p>
+				</div>
+				<div class="topic-geral"></div>
+				<div class="container">
+					<h6 class="font-title margin-bottom-15">
+						Instalação do framework Arduino_Firmata
+					</h6>
+					<p class="font-p2 margin-bottom-15">
+						Siga esses simples passos e você terá o framework na sua máquina:
+					</p>
+					<div class="requeriments margin-bottom-15">
+						<p class="font-p2">
+							Instale o framework na sua máquina:
+							<strong>sudo gem install arduino_firmata</strong>
+						</p>
+						<p class="font-p2">
+							<strong>Atenção:</strong> tente conectar o arduino com o ruby,
+							caso não funcione, execute e tente novamente:
+							<strong>sudo gem install arduino</strong>
+						</p>
+					</div>
+					<p class="font-p2 margin-bottom-15">
+						Você pode consultar e saber mais no link:
+						<a href="https://rubygems.org/gems/arduino_firmata"
+							>https://rubygems.org/gems/arduino_firmata</a
+						>
+					</p>
+					<p class="font-p2 margin-bottom-15">
+						Sobre versões:
+						<a href="https://rubygems.org/gems/arduino_firmata/versions"
+							>https://rubygems.org/gems/arduino_firmata/versions</a
+						>
+					</p>
+					<p class="font-p2">Pronto, o framework já está na sua máquina!</p>
+				</div>
+				<div class="topic-geral"></div>
+				<div class="container">
+					<h6 class="font-title margin-bottom-15">
+						Instalação o seu ambiente de desenvolvimento
+					</h6>
+					<p class="font-p2 margin-bottom-15">
+						Siga esses simples passos e você terá o ambiente de desenvolvimento
+						na sua máquina:
+					</p>
+					<div class="requeriments margin-bottom-15">
+						<p class="font-p2">
+							Nós aconselhamos a você usar o ambiente de desenvolvimento feito
+							pela Microsoft Corporation, o <strong>Visual Studio Code</strong>
+						</p>
+						<p class="font-p2 margin-bottom-15">
+							Você pode obter ele através do link:
+							<a href="https://code.visualstudio.com"
+								>https://code.visualstudio.com</a
+							>
+						</p>
+						<p class="font-p2">
+							Entrentanto, você pode instalar o VS Code via terminal usando os
+							seguintes comandos:
+						</p>
+						<p class="font-p2">
+							Instale o snap: <strong>sudo apt install snap</strong>
+						</p>
+						<p class="font-p2">
+							Instale o VS Code através do snap:
+							<strong>sudo snap install code</strong>
+						</p>
+					</div>
+					<p class="font-p2">
+						Pronto, o ambiente de desenvolvimento já está na sua máquina!
+					</p>
+				</div>
+				<div class="topic-geral"></div>
+			</section>
+		</main>
+	</body>
+	<script src="./js/collapse.js"></script>
+</html>

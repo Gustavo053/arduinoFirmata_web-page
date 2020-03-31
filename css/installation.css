@@ -1,0 +1,45 @@
+.geral {
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	position: relative;
+}
+
+.inicio {
+	width: auto;
+	height: auto;
+	margin-bottom: 5%;
+}
+
+nav {
+	border-bottom: solid 3px #d7d7d7;
+}
+
+.topic-1 {
+	margin-bottom: 20px;
+	width: 22%;
+	border: solid 2px #900600;
+}
+
+.topic-geral {
+	margin-top: 25px;
+	margin-bottom: 20px;
+	width: 40%;
+	border: solid 2px #900600;
+}
+
+.requeriments {
+	margin-top: 20px;
+	width: 70%;
+	background-color: #f3f3f3;
+	border-radius: 5px;
+}
+
+.margin-bottom-15 {
+	margin-bottom: 15px;
+}
+
+.font-p2 a {
+	text-decoration: none;
+	color: #3da0d9;
+}

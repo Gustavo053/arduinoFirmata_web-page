@@ -1,0 +1,217 @@
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/geral.css" />
+		<link rel="stylesheet" href="./css/header.css" />
+		<link rel="stylesheet" href="./css/installation.css" />
+		<link rel="stylesheet" href="./css/responsive.css" />
+		<title>Instalação</title>
+	</head>
+	<body>
+		<header>
+			<nav class="menu">
+				<div class="logo">
+					<img src="./images/ruby.png" width="20%" alt="logo" />
+				</div>
+				<button class="botao-menu" id="botao-menu">
+					<img src="./images/botao.png" alt="botao" />
+				</button>
+				<button class="botao-menu" id="botao-fechar">
+					<img src="./images/fechar.png" alt="botao fechar" />
+				</button>
+				<ul class="font-item" id="menu-mobile">
+					<li>
+						<a href="./index.html">Página Inicial</a>
+					</li>
+					<li>
+						<a href="./installation.html">Instalação</a>
+					</li>
+					<li>
+						<a href="./connectionArduino.html">Conexão com Arduino</a>
+					</li>
+					<li>
+						<a href="connectionESP32.html">Conexão com ESP32</a>
+					</li>
+					<li>
+						<a href="./examples.html">Exemplos</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main class="geral">
+			<div class="inicio"></div>
+			<section class="align-self-end">
+				<div class="topic-1"></div>
+				<div class="container">
+					<h6 class="font-title margin-bottom-15">
+						Programando o ESP32 para receber comandos via serial
+					</h6>
+					<p class="font-p2 margin-bottom-15">
+						Para conectarmos o ESP32 com o ruby, primeiramente você tem que
+						configurar sua IDE Arduino para o ESP32 e enviar o código do
+						procotolo FirmataESP32 para a placa, assim ela irá receber comandos
+						via serial. Para fazer isso, siga os passos:
+					</p>
+					<div class="requeriments margin-bottom-15">
+						<p class="font-p2">
+							Conecte o ESP32 no seu computador.
+						</p>
+						<p class="font-p2">
+							Abra a sua IDE Arduino.
+						</p>
+						<p class="font-p2">
+							Para usar e programar ESP32 na IDE do Arduino, precisamos primeiro
+							que ele reconheça os modelos da placa.
+						</p>
+						<p class="font-p2">
+							Para isso, primeiramente devemos ir em
+							<strong>Arquivo</strong>, ir até <strong>Preferências</strong> e
+							colar a URL abaixo no campo de <strong>URLs adicionais</strong>:
+						</p>
+						<p class="font-p2">
+							<a href="https://dl.espressif.com/dl/package_esp32_index.json"
+								>https://dl.espressif.com/dl/package_esp32_index.json</a
+							>
+						</p>
+						<p class="font-p2">
+							Com isso, permitimos que a IDE acesse uma pequena “base de dados”
+							no formato .json que contém a configuração de inúmeras placas.
+						</p>
+						<p class="font-p2">
+							Após isso, devemos acessar o menu
+							<strong>Ferramentas -> Placa -> Gerenciador de Placas</strong>.
+						</p>
+						<p class="font-p2">
+							Nele, pesquise por <strong>esp32</strong> na caixa de pesquisa. Em
+							seguida, instale a versão mais recente do driver que irá aparecer:
+							<strong>esp32 by Espressif Systems</strong>.
+						</p>
+						<p class="font-p2">
+							Feito isso, vá até <strong>Ferramente -> Placa</strong> selecione
+							a placa “ESP32 Dev Module”, no menu de placas, para programar na
+							ESP.
+						</p>
+						<p class="font-p2">
+							Baixe o protocolo StandardFirmataESP32
+							<a href="#">aqui</a>.
+						</p>
+						<p class="font-p2">
+							Vá no diretório que você instalou a IDE Arduino e entre na pasta
+							dela.
+						</p>
+						<p class="font-p2">
+							Vá em <strong>libraries -> Firmata -> examples</strong>
+						</p>
+						<p class="font-p2">
+							Dentro da pasta examples, extraia a pasta do StandardFirmataESP32
+							que você baixou.
+						</p>
+						<p class="font-p2">
+							Volte para IDE Arduino.
+						</p>
+						<p class="font-p2">
+							Selecione a porta em que a placa está na opção
+							<strong>porta</strong> (geralmente ela é identificada como
+							ttyUSB0).
+						</p>
+						<p class="font-p2">
+							Vá na opção <strong>Arquivos</strong>, selecione a opção
+							<strong>Exemplos</strong> e vá até a opção
+							<strong>StandardFirmataESP32</strong>.
+						</p>
+						<p class="font-p2">
+							Envie para a placa o código que foi gerado quando você clicou na
+							opção.
+						</p>
+					</div>
+					<p class="font-p2">
+						Após realizar esses passos, a sua placa estará "escutando" comandos
+						que serão enviados via serial, pois o código do StandardFirmataESP32
+						fica rodando na placa e permite que comandos via serial sejam
+						passados e executados na placa.
+					</p>
+				</div>
+				<div class="topic-geral"></div>
+				<div class="container">
+					<h6 class="font-title margin-bottom-15">
+						Realizando a conexão do ruby e o ESP32
+					</h6>
+					<p class="font-p2">
+						Monte esse circuito:
+					</p>
+					<img src="./images/esp32blinkled.png" width="40%" alt="" />
+					<div class="requeriments margin-bottom-15">
+						<p class="font-p2">
+							Abra o terminal e insira o comando:
+							<strong>gort scan serial</strong>
+						</p>
+						<p class="font-p2">
+							Veja a porta que a placa está conectada (geralmente ela é
+							identificada como <strong>ttyUSB0</strong>).
+						</p>
+						<p class="font-p2">
+							Abra o VS Code e crie um arquivo com o nome
+							<strong>blink_led_esp32.rb</strong>, por exemplo.
+						</p>
+					</div>
+					<p class="font-p2">
+						Insira o seguinte código:
+					</p>
+					<div class="requeriments margin-bottom-15">
+						<p class="font-p2">require 'rubygems'</p>
+						<p class="font-p2">require 'arduino_firmata'</p>
+						<br />
+						<p class="font-p2">
+							arduino = ArduinoFirmata.connect "/dev/ttyUSB0"
+						</p>
+						<br />
+						<p class="font-p2">
+							#ACENDER E DESLIGAR O LED
+						</p>
+						<br />
+						<p class="font-p2">
+							arduino.pin_mode 10, ArduinoFirmata::OUTPUT
+						</p>
+						<p class="font-p2">
+							stat = true
+						</p>
+						<p class="font-p2">
+							loop do
+						</p>
+						<p class="font-p2">
+							puts stat
+						</p>
+						<p class="font-p2">
+							arduino.digital_write 10, stat
+						</p>
+						<p class="font-p2">
+							stat = !stat
+						</p>
+						<p class="font-p2">
+							sleep 1
+						</p>
+						<p class="font-p2">
+							end
+						</p>
+					</div>
+					<div class="requeriments margin-bottom-15">
+						<p class="font-p2">
+							Abra o terminal do VS Code e execute o código: ruby
+							blink_led_esp32.rb
+						</p>
+						<p class="font-p2 margin-bottom-15">Veja o resultado.</p>
+					</div>
+					<p class="font-p2">
+						Pronto! A conexão do ruby com o ESP32 através do framework foi
+						realizada com sucesso. Agora você pode fazer diferentes circuitos e
+						executar o código através do ruby. Para mais exemplos, vá até a aba
+						<strong>Exemplos</strong>.
+					</p>
+				</div>
+				<div class="topic-geral"></div>
+			</section>
+		</main>
+	</body>
+	<script src="./js/collapse.js"></script>
+</html>

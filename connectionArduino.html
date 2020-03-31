@@ -1,0 +1,170 @@
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/geral.css" />
+		<link rel="stylesheet" href="./css/header.css" />
+		<link rel="stylesheet" href="./css/installation.css" />
+		<link rel="stylesheet" href="./css/responsive.css" />
+		<title>Instalação</title>
+	</head>
+	<body>
+		<header>
+			<nav class="menu">
+				<div class="logo">
+					<img src="./images/ruby.png" width="20%" alt="logo" />
+				</div>
+				<button class="botao-menu" id="botao-menu">
+					<img src="./images/botao.png" alt="botao" />
+				</button>
+				<button class="botao-menu" id="botao-fechar">
+					<img src="./images/fechar.png" alt="botao fechar" />
+				</button>
+				<ul class="font-item" id="menu-mobile">
+					<li>
+						<a href="./index.html">Página Inicial</a>
+					</li>
+					<li>
+						<a href="./installation.html">Instalação</a>
+					</li>
+					<li>
+						<a href="./connectionArduino.html">Conexão com Arduino</a>
+					</li>
+					<li>
+						<a href="./connectionESP32.html">Conexão com ESP32</a>
+					</li>
+					<li>
+						<a href="./examples.html">Exemplos</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main class="geral">
+			<div class="inicio"></div>
+			<section class="align-self-end">
+				<div class="topic-1"></div>
+				<div class="container">
+					<h6 class="font-title margin-bottom-15">
+						Programando o arduino para receber comandos via serial
+					</h6>
+					<p class="font-p2 margin-bottom-15">
+						Para conectarmos o arduino com o ruby, primeiramente você tem que
+						enviar o código do procotolo Firmata para a placa, assim ela irá
+						receber comandos via serial. Para fazer isso, siga os passos:
+					</p>
+					<div class="requeriments margin-bottom-15">
+						<p class="font-p2">
+							Conecte o arduino no seu computador.
+						</p>
+						<p class="font-p2">
+							Abra a sua IDE Arduino.
+						</p>
+						<p class="font-p2">
+							Vá em <strong>ferramentas</strong> e selecione a sua placa como
+							sendo <strong>Arduino Uno</strong>.
+						</p>
+						<p class="font-p2">
+							Selecione a porta em que a placa está na opção
+							<strong>porta</strong> (geralmente ela é identificada como
+							ttyUSB0).
+						</p>
+						<p class="font-p2">
+							Vá na opção <strong>Arquivos</strong>, selecione a opção
+							<strong>Exemplos</strong> e vá até a opção
+							<strong>StandardFirmata</strong>.
+						</p>
+						<p class="font-p2">
+							Envie para a placa o código que foi gerado quando você clicou na
+							opção.
+						</p>
+					</div>
+					<p class="font-p2">
+						Após realizar esses passos, a sua placa estará "escutando" comandos
+						que serão enviados via serial, pois o código do StandardFirmata fica
+						rodando na placa e permite que comandos via serial sejam passados e
+						executados na placa.
+					</p>
+				</div>
+				<div class="topic-geral"></div>
+				<div class="container">
+					<h6 class="font-title margin-bottom-15">
+						Realizando a conexão do ruby e o arduino
+					</h6>
+					<p class="font-p2">
+						Monte esse circuito:
+					</p>
+					<img src="./images/BlinkLed2.PNG" width="50%" alt="" />
+					<div class="requeriments margin-bottom-15">
+						<p class="font-p2">
+							Abra o terminal e insira o comando:
+							<strong>gort scan serial</strong>
+						</p>
+						<p class="font-p2">
+							Veja a porta que a placa está conectada (geralmente ela é
+							identificada como <strong>ttyUSB0</strong>).
+						</p>
+						<p class="font-p2">
+							Abra o VS Code e crie um arquivo com o nome
+							<strong>blink_led.rb</strong>, por exemplo.
+						</p>
+					</div>
+					<p class="font-p2">
+						Insira o seguinte código:
+					</p>
+					<div class="requeriments margin-bottom-15">
+						<p class="font-p2">require 'rubygems'</p>
+						<p class="font-p2">require 'arduino_firmata'</p>
+						<br />
+						<p class="font-p2">
+							arduino = ArduinoFirmata.connect "/dev/ttyUSB0"
+						</p>
+						<br />
+						<p class="font-p2">
+							#ACENDER E DESLIGAR O LED
+						</p>
+						<br />
+						<p class="font-p2">
+							arduino.pin_mode 10, ArduinoFirmata::OUTPUT
+						</p>
+						<p class="font-p2">
+							stat = true
+						</p>
+						<p class="font-p2">
+							loop do
+						</p>
+						<p class="font-p2">
+							puts stat
+						</p>
+						<p class="font-p2">
+							arduino.digital_write 10, stat
+						</p>
+						<p class="font-p2">
+							stat = !stat
+						</p>
+						<p class="font-p2">
+							sleep 1
+						</p>
+						<p class="font-p2">
+							end
+						</p>
+					</div>
+					<div class="requeriments margin-bottom-15">
+						<p class="font-p2">
+							Abra o terminal do VS Code e execute o código: ruby blink_led.rb
+						</p>
+						<p class="font-p2 margin-bottom-15">Veja o resultado:</p>
+						<img src="./images/BlinkLed.gif" width="50%" alt="" />
+					</div>
+					<p class="font-p2">
+						Pronto! A conexão do ruby com o arduino através do framework foi
+						realizada com sucesso. Agora você pode fazer diferentes circuitos e
+						executar o código através do ruby. Para mais exemplos, vá até a aba
+						<strong>Exemplos</strong>.
+					</p>
+				</div>
+				<div class="topic-geral"></div>
+			</section>
+		</main>
+	</body>
+	<script src="./js/collapse.js"></script>
+</html>

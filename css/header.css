@@ -1,0 +1,69 @@
+.menu {
+	z-index: 1;
+	width: 100%;
+	height: 8%;
+	background-color: white;
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	width: 12%;
+	text-align: right;
+}
+
+nav ul {
+	list-style: none;
+	text-align: right;
+	margin-right: 7%;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #7e7e7e;
+	transition: all 0.6s ease;
+}
+
+nav ul li a:hover {
+	text-decoration: none;
+	color: #900600;
+}
+
+nav ul li {
+	margin: 7px;
+	display: inline;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+.botao-menu {
+	margin-right: 27px;
+	width: 20px;
+	outline-style: none;
+	border: none;
+	background: none;
+}
+
+.botao-menu img {
+	max-width: 100%;
+}
+
+#botao-fechar {
+	display: none;
+}
+
+.display-block {
+	display: block !important;
+}
+
+.display-none {
+	display: none !important;
+}
+
+#botao-menu {
+	display: none;
+}
