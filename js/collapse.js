@@ -19,7 +19,3 @@ window.addEventListener("load", event => {
 	}
 	collapse();
 });
-
-function getStarted() {
-	window.open("./installation.html", "Instalação", windowFeatures);
-}
