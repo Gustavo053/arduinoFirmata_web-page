@@ -18,6 +18,14 @@
 	font-size: 15px;
 }
 
+.font-p3 {
+	color: rgb(41, 37, 37);
+	padding-top: 10px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+}
+
 .font-p2 {
 	color: darkgray;
 	padding-top: 10px;

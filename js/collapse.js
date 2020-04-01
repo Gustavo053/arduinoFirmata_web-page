@@ -19,3 +19,7 @@ window.addEventListener("load", event => {
 	}
 	collapse();
 });
+
+function getStarted() {
+	location.href = "installation.html";
+}
